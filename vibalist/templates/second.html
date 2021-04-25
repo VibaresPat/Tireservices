@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+	<center>
+<h1 style="color:#805500; font-family: courier; font-size: 50px;">Request Form</h1>
+<h2 style="color:#4d3300; ">-ICT LESSON-</h2><hr>
+	</center>	
+<table style="width:100%">
+	<tr>
+		
+		<th>FULLNAME:</th>
+		<th>EMAIL:</th>
+		<th>DATE:</th>
+		<th>COURSE AND SECTION:</th>
+		<th>LESSON:</th>
+		<th>REASON:</th>
+
+	</tr>
+
+
+<div class="pat">
+{% for pat in pat %}
+<div class="pat">
+
+	<tr>
+    	<td>{{ forloop.counter }}:{{ pat.firstname }}</td>
+    	<td>{{ pat.Gmail }}</td>
+    	<td>{{ pat.birthday}}</td>
+    	<td>{{ pat.coursesection }}</td>
+    	<td>{{ pat.lesson }}</td>
+    	<td>{{ pat.letter}}</td>
+
+  </tr>
+
+
+</div>
+	{% endfor %}
+</center>
+</body>
+</html>
+
+
+
+
+
