@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
- 	<title>Baybayin Project</title>
+ 	<title>Request Form</title>
  </head>
 <body style="background-color:  #fff7e6">
 	<center>
@@ -11,24 +11,25 @@
 <form class="form" action="" method="post">
   {% csrf_token %}
 
-  <p>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; FULLNAME:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  EMAIL:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATE:&nbsp;&nbsp; </p>
-  
+  <p id="u">FULLNAME:</p>
   <input type="text" id="firstname" name="firstname" placeholder="SN/FN/MN" required>
-  <input type="text" id="Gmail" name="Gmail" placeholder="@gmail"required>
+  <p id="n">EMAIL:</p>
+    <input type="text" id="Gmail" name="Gmail" placeholder="@gmail"required>
+  <p id="a">DATE:</p>
   <input type = "date" id="birthday" name="birthday" required><br><br>
 
-  <p>COURSE AND SECTION:</p>
-  <input type="text" id="coursesection" name="coursesection" placeholder="Ex:BSIE-ICT-3A"required><br><br>
+  <p id="pangalawa">COURSE AND SECTION:</p>
+  <input type="text" id="coursesection" name="coursesection" placeholder="Ex: BSIE-ICT-3A"required><br><br>
 
   <div id="lesson">
-  <p>LESSON:</p>
-   <input type ="radio" id="lec" name="lesson" value="LECTURE" required>LECTURE<br>
-   <input type ="radio" id="lab" name="lesson" value="LABARATORY" required>LABARATORY<br>
+  <p id="pangatlo">LESSON:</p>
+   <input type ="radio" id="lec" name="lesson" value="LECTURE" required>LECTURE
+   <input type ="radio" id="lab" name="lesson" value="LABARATORY" required>LABARATORY
    <input type ="radio" id="all" name="lesson" value="BOTH" required>BOTH<br><br>
   </div>
 
-  <p>REASON:</p>
-  <p>Note: Provide a formal letter for requesting.</p>
+  <p id="pangapat">REASON:</p>
+  <p id="panglima">Note: Provide a formal letter for requesting.</p>
   <input type="text" size ="50" id="letter" name="letter" placeholder ="Valid Reason"required><br><br>
   <input type="Submit" id=done value="Submit"> 
 
