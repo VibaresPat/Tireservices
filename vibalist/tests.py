@@ -1,38 +1,138 @@
+from django.test import TestCase
+from django.http import HttpRequest
+from django.template.loader import render_to_string
+from vibalist.views import Lods
 from django.urls import resolve
-'''from django.test import TestCase
-from vibalist.views import homepage
+#For Models testing
+from vibalist.models import Item
 
-class HomePageTest(TestCase):
+class IndexTest(TestCase):
 
-	def test_mainpage_return_correct_view(self):
+	def html_index_root_homepage_na_gawa_ko(self):
+		found = resolve('/')
+		self.assertEqual(found.func, Lods)
+
+		
+	def test_index_returns_correct_view(self):
+		request = HttpRequest()
+		response = Lods(request)
+		html = response.content.decode('UTF-8')
 		response = self.client.get('/')
 		self.assertTemplateUsed(response, 'homepage.html')
 
-	 def test_homepage_returns_correct_views(self):
-		response = self.client.get('/')
-		html = response.content.decode('utf8')
-		string_html = render_to_string('homepage.html')
-		self.assertEqual(html, string_html)
-		self.assertTemplateUsed(response,'homepage.html')
+		self.assertTrue(html.strip().startswith('<html>'))
+		self.assertTemplateUsed(response, 'homepage.html')
+		self.assertIn('<title>Request Form</title>', html)
 
-	def test_root_url_resolve_to_mainpage_view(self)
-		found = resolve('/')
-		self.assertEqual(found.func, Mainpage)
-
-	def test_mainpage_returns_correct_view(self):
-		request = HttpRequest()
-		response = MainPage(request)
-		html = response.content.decode('utf8')
-		string_html = render_to_string('homepage.html')
-		self.assertEqual(html, string_html)
-
-	def test_mainpage_returns_correct_view(self):
-		request = HttpRequest()
-		response = MainPage(request)
-		html = response.content.decode('utf8')
-		self.assertTrue(html,strip().startswith('html>'))
-		self.assertIn('<title>Contact Tracing List</title', html)
+		self.assertTemplateUsed(response, 'homepage.html')
+		self.assertIn('<html>', html)
+		self.assertIn('<head>', html)
+		self.assertIn('<title>Request Form</title>', html)
+		self.assertIn('</head>', html)
+		self.assertIn('<body style="background-color:  #fff7e6">', html)
+		self.assertIn('<center>', html)
+		self.assertIn('<h1 style="color:#805500; font-family: sans-serif; font-size: 50px; background-color:  #f2ffcc">Request Form</h1>', html)
+		self.assertIn('<h2 style="color:#4d3300;font-family: courier;font-size: 30px; ">-ICT LESSON-</h2>',html)
+		self.assertIn('<p id="u">FULLNAME:</p>', html)
+		self.assertIn('<input type="text" id="firstname" name="firstname" placeholder="SN/FN/MN" required>', html)
+		self.assertIn('<p id="n">EMAIL:</p>', html)
+		self.assertIn(' <input type="text" id="Gmail" name="Gmail" placeholder="@gmail"required>', html)
+		self.assertIn('<p id="a">DATE:</p>', html)
+		self.assertIn('<input type = "date" id="birthday" name="birthday" required>', html)
+		self.assertIn('<p id="pangalawa">COURSE AND SECTION:</p>', html)
+		self.assertIn('<input type="text" id="coursesection" name="coursesection" placeholder="Ex: BSIE-ICT-3A"required>', html)
+		self.assertIn('<div id="lesson">', html)
+		self.assertIn('<p id="pangatlo">LESSON:</p>', html)
+		self.assertIn('<input type ="radio" id="lec" name="lesson" value="LECTURE" required>LECTURE', html)
+		self.assertIn('<input type ="radio" id="lab" name="lesson" value="LABARATORY" required>LABARATORY', html)
+		self.assertIn('<input type ="radio" id="all" name="lesson" value="BOTH" required>BOTH', html)
+		self.assertIn('<p id="pangapat">REASON:</p>', html)
+		self.assertIn('<p id="panglima">Note: Provide a formal letter for requesting.</p>', html)
+		self.assertIn('<input type="text" size ="50" id="letter" name="letter" placeholder ="Valid Reason"required>', html)
+		self.assertIn('<input type="Submit" id=done value="Submit">', html)
+		self.assertIn('<br>', html)
+		self.assertIn('</center>', html)
+		self.assertIn('</body>', html)
+		self.assertIn('</html>', html)
+	
 		self.assertTrue(html.strip().endswith('</html>'))
-		'''
+
+
+class ORM_Patricia_Vibs(TestCase):
+	def test_mo_here(self):
+		Item1 = Item()
+		Item1.firstname = 'Vibares, Patricia M.'
+		Item1.save()
+		Item2 = Item()
+		Item2.Gmail = 'vibarespatricia@gmail.com'
+		Item2.save()
+		Item3 = Item()
+		Item3.birthday = '2021-11-04' 
+		Item3.save()
+		Item4 = Item()
+		Item4.coursesection = 'BSIE-ICT-3A'
+		Item4.save()
+		Item5 = Item()
+		Item5.lesson = 'BOTH'
+		Item5.save()
+		Item6 = Item()
+		Item6.lesson = 'excuse'
+		Item6.save()
+		
+		saveall = Item.objects.all()
+		self.assertEqual(saveall.count(), 6)
+		save1 = saveall[0]
+		save2 = saveall[1]
+		save3 = saveall[2]
+		save4 = saveall[3]
+		save5 = saveall[4]
+		save6 = saveall[5]
+		
+		self.assertEqual(Item1.firstname, 'Vibares, Patricia M.')
+		self.assertEqual(Item2.Gmail, 'vibarespatricia@gmail.com')
+		self.assertEqual(Item3.birthday, '2021-11-04')
+		self.assertEqual(Item4.coursesection, 'BSIE-ICT-3A')
+		self.assertEqual(Item5.lesson, 'BOTH')
+		self.assertEqual(Item6.lesson, 'excuse')
+
+
+class ORM_Vibssss_Pat(TestCase):
+	def test_mo_here(self):
+		Item1 = Item()
+		Item1.firstname = 'Vibares, Patricia M.'
+		Item1.save()
+		Item2 = Item()
+		Item2.Gmail = 'vibarespatricia@gmail.com'
+		Item2.save()
+		Item3 = Item()
+		Item3.birthday = '2021-11-04' 
+		Item3.save()
+		Item4 = Item()
+		Item4.coursesection = 'BSIE-ICT-3A'
+		Item4.save()
+		Item5 = Item()
+		Item5.lesson = 'BOTH'
+		Item5.save()
+		Item6 = Item()
+		Item6.lesson = 'excuse'
+		Item6.save()
+		
+		saveall = Item.objects.all()
+		self.assertEqual(saveall.count(), 6)
+		save1 = saveall[0]
+		save2 = saveall[1]
+		save3 = saveall[2]
+		save4 = saveall[3]
+		save5 = saveall[4]
+		save6 = saveall[5]
+		
+		self.assertEqual(Item1.firstname, 'Vibares, Patricia M.')
+		self.assertEqual(Item2.Gmail, 'vibarespatricia@gmail.com')
+		self.assertEqual(Item3.birthday, '2021-11-04')
+		self.assertEqual(Item4.coursesection, 'BSIE-ICT-3A')
+		self.assertEqual(Item5.lesson, 'BOTH')
+		self.assertEqual(Item6.lesson, 'excuse')
+	
+	
 
 

@@ -6,7 +6,7 @@ class Item(models.Model):
 	#Email
 	Gmail = models.CharField(max_length=20, null=True)
 	#DATE
-	birthday = models.DateTimeField(auto_now=True, null=True)
+	birthday = models.DateTimeField(null=True)
 	#Course and Section
 	coursesection = models.CharField(max_length=20, null=True)
 	#lesson

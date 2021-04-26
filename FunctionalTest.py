@@ -44,6 +44,29 @@ class PageTest(unittest.TestCase):
 
 		form = self.browser.find_element_by_tag_name('form')
 
+
+		i= self.browser.find_element_by_id('firstname')  
+		self.assertEqual(i.get_attribute('placeholder'),'SN/FN/MN')
+		i = self.browser.find_element_by_id('firstname').send_keys("Vibares, Patricia M.")
+		time.sleep(1)
+
+		n= self.browser.find_element_by_id('Gmail')  
+		self.assertEqual(n.get_attribute('placeholder'),'@gmail')
+		n= self.browser.find_element_by_id('Gmail').send_keys("vibarespatricia@gmail.com")
+		time.sleep(1)
+
+		u= self.browser.find_element_by_id('birthday') 
+		time.sleep(1)
+		
+		dat = self.browser.find_element_by_id('birthday').click()
+		dat = self.browser.find_element_by_id('birthday').send_keys("2012-11-02")
+		time.sleep(1)
+
+		l= self.browser.find_element_by_id('coursesection')  
+		self.assertEqual(l.get_attribute('placeholder'),'Ex: BSIE-ICT-3A')
+		l= self.browser.find_element_by_id('coursesection').send_keys("BSIE-ICT-3A")
+		time.sleep(1)
+
 		lesson0 = self.browser.find_element_by_name('lesson').click()
 		lesson1 = self.browser.find_element_by_name('lesson').click()
 		lesson2 = self.browser.find_element_by_name('lesson').click()
@@ -51,25 +74,6 @@ class PageTest(unittest.TestCase):
 		Select1 = self.browser.find_element_by_id('lec').click()
 		Select2 = self.browser.find_element_by_id('lab').click()
 		Select3 = self.browser.find_element_by_id('all').click()
-	
-
-		i= self.browser.find_element_by_id('firstname')  
-		self.assertEqual(i.get_attribute('placeholder'),'SN/FN/MN')
-		i = self.browser.find_element_by_id('firstname').send_keys("Nice")
-		time.sleep(1)
-
-		n= self.browser.find_element_by_id('Gmail')  
-		self.assertEqual(n.get_attribute('placeholder'),'@gmail')
-		n= self.browser.find_element_by_id('Gmail').send_keys("Nice")
-		time.sleep(1)
-
-		u= self.browser.find_element_by_id('birthday') 
-		time.sleep(1)
-
-		l= self.browser.find_element_by_id('coursesection')  
-		self.assertEqual(l.get_attribute('placeholder'),'Ex: BSIE-ICT-3A')
-		l= self.browser.find_element_by_id('coursesection').send_keys("Nice")
-		time.sleep(1)
 
 		k= self.browser.find_element_by_id('lec')  
 		w= self.browser.find_element_by_id('lab') 
@@ -78,14 +82,10 @@ class PageTest(unittest.TestCase):
 
 		f= self.browser.find_element_by_id('letter')  
 		self.assertEqual(f.get_attribute('placeholder'),'Valid Reason')
-		f= self.browser.find_element_by_id('letter').send_keys("Nice")
+		f= self.browser.find_element_by_id('letter').send_keys("Fever")
 		time.sleep(1)
 
 		r= self.browser.find_element_by_id('done') 
-		time.sleep(1)
-
-		dat = self.browser.find_element_by_id('birthday').click()
-		dat = self.browser.find_element_by_id('birthday').send_keys("2012-11-02")
 		time.sleep(1)
 
 		sub = self.browser.find_element_by_id('done').click()
@@ -96,6 +96,30 @@ class PageTest(unittest.TestCase):
 		self.browser = webdriver.Firefox()
 		self.browser.get('http://localhost:8000')
 
+		
+		i= self.browser.find_element_by_id('firstname')  
+		self.assertEqual(i.get_attribute('placeholder'),'SN/FN/MN')
+		i = self.browser.find_element_by_id('firstname').send_keys("Vibares, Patricia M.")
+		time.sleep(1)
+
+		n= self.browser.find_element_by_id('Gmail')  
+		self.assertEqual(n.get_attribute('placeholder'),'@gmail')
+		n= self.browser.find_element_by_id('Gmail').send_keys("vibarespatricia@gmail.com")
+		time.sleep(1)
+
+		u= self.browser.find_element_by_id('birthday') 
+		time.sleep(1)
+
+		dat = self.browser.find_element_by_id('birthday').click()
+		dat = self.browser.find_element_by_id('birthday').send_keys("2021-11-04")
+		time.sleep(1)
+
+
+		l= self.browser.find_element_by_id('coursesection')  
+		self.assertEqual(l.get_attribute('placeholder'),'Ex: BSIE-ICT-3A')
+		l= self.browser.find_element_by_id('coursesection').send_keys("BSIE-ICT-3A")
+		time.sleep(1)
+
 		lesson0 = self.browser.find_element_by_name('lesson').click()
 		lesson1 = self.browser.find_element_by_name('lesson').click()
 		lesson2 = self.browser.find_element_by_name('lesson').click()
@@ -104,25 +128,6 @@ class PageTest(unittest.TestCase):
 		Select2 = self.browser.find_element_by_id('lab').click()
 		Select3 = self.browser.find_element_by_id('all').click()
 	
-
-		i= self.browser.find_element_by_id('firstname')  
-		self.assertEqual(i.get_attribute('placeholder'),'SN/FN/MN')
-		i = self.browser.find_element_by_id('firstname').send_keys("Nice")
-		time.sleep(1)
-
-		n= self.browser.find_element_by_id('Gmail')  
-		self.assertEqual(n.get_attribute('placeholder'),'@gmail')
-		n= self.browser.find_element_by_id('Gmail').send_keys("Nice")
-		time.sleep(1)
-
-		u= self.browser.find_element_by_id('birthday') 
-		time.sleep(1)
-
-		l= self.browser.find_element_by_id('coursesection')  
-		self.assertEqual(l.get_attribute('placeholder'),'Ex: BSIE-ICT-3A')
-		l= self.browser.find_element_by_id('coursesection').send_keys("Nice")
-		time.sleep(1)
-
 		k= self.browser.find_element_by_id('lec')  
 		w= self.browser.find_element_by_id('lab') 
 		z= self.browser.find_element_by_id('all') 
@@ -130,15 +135,12 @@ class PageTest(unittest.TestCase):
 
 		f= self.browser.find_element_by_id('letter')  
 		self.assertEqual(f.get_attribute('placeholder'),'Valid Reason')
-		f= self.browser.find_element_by_id('letter').send_keys("Nice")
+		f= self.browser.find_element_by_id('letter').send_keys("excuse")
 		time.sleep(1)
 
 		r= self.browser.find_element_by_id('done') 
 		time.sleep(1)
 
-		dat = self.browser.find_element_by_id('birthday').click()
-		dat = self.browser.find_element_by_id('birthday').send_keys("2012-11-02")
-		time.sleep(1)
 
 		sub = self.browser.find_element_by_id('done').click()
 		time.sleep(1)
