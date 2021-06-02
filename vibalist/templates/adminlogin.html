@@ -1,0 +1,21 @@
+<html>
+ <head>
+  <title>LOG-IN-ADMIN</title>
+ </head>
+<body style="background-color:  #fff7e6">
+  <center>
+  <h1 style="color:#805500; font-family: sans-serif; font-size: 50px; background-color:  #f2ffcc">We Vulcanize Your Tire!</h1></h1>
+ 
+<form class="form" action="Call" method="post">
+	{% csrf_token %}
+ 
+ <p id="in">Log-in: </p> 
+ <input type="text" id="username" name="username"><br>
+ <p id="pwd">Password </p>
+ <input type="password" id="pwd" name="pwd"><br><br>
+ <input type="submit" value="Confirm">
+
+</form> 
+</center>
+</body>
+</html>

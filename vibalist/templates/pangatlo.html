@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WALK-IN2</title>
+</head>
+<body>
+<center>
+<h1 style="color:#805500; font-family: courier; font-size: 50px;">We Vulcanize Your Tire!</h1></h1>
+
+<form class="form" action="next" method="POST">
+  {% csrf_token %}
+
+  <center><p id="ss">Create your formal letter for Requesting:</p></center>
+  <p id="u">Diagnose Issue: <br><br><input type="text" id="firstname" name="firstname" placeholder="" required></p> 
+  <p id= "Se"> Services: </p>
+  <input type="checkbox" id="vehicle1" name="vehicle1" value="Interior Tire Repair"> Interior Tire Repair<br>
+  <input type="checkbox" id="vehicle2" name="vehicle2" value="Radiator Overhaul">Radiator Overhaul<br>
+  <input type="checkbox" id="vehicle3" name="vehicle3" value="Welding">Welding<br>
+  <input type="checkbox" id="vehicle4" name="vehicle4" value="Jack Repair"> Jack Repair<br>
+  <input type="checkbox" id="vehicle5" name="vehicle5" value="Tire Repair">Tire Repair<br>
+  <p id= "Se"> Products: </p>
+  <input type="checkbox" id="vehicle6" name="vehicle6" value="Interior"> Interior Tire<br><br>
+ 
+
+
+  <input type="Submit" id=done value="Confirm"> 
+</center>
+</form> 
+</body>
+</html>
+
+
+
+
+
+
+
