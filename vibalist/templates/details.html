@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tutoring.com</title>
+<style>
+  *{ margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family:sans-serif;
+  
+}
+h1{
+  font-family: Pangolin;
+  font-size: 30px;
+}
+nav{
+  background: rgb(95, 122, 84);
+  position:fixed;
+  width: 100%;
+  z-index: 999;
+  height: 65px;
+  line-height: 65px;
+
+
+}
+nav p{
+  max-width: 1250px;
+  padding: 0 30px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #f2f2f2;
+  font-size: 35px;
+  font-family: Lobster;
+}
+
+.hidden
+        {
+            display:none;
+            
+        }
+        .shown
+        {
+            display:block;
+
+        }
+
+</style>
+<style >
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+</style>
+ <style>
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+</style>
+</head>
+
+<script type="text/javascript">
+      function showDiv (divId)
+        {
+          var div = document.getElementById (divId);
+          var divs = document.getElementsByTagName('div');
+          for (var i in divs) 
+          {
+            divs [i].className = "hidden";
+          }
+          div.className = "shown";
+        }
+    </script>
+    
+<body style="background: url('{% static 'Image/14.jpg' %}') no-repeat fixed; background-size: cover;">
+  <nav> 
+    <p> Tutoring.com </p>     
+  </nav>
+
+<form class="form" action="Call" method="POST">
+    {% csrf_token %}
+  <center><br><br><br><br><br>
+
+    <h1>With us, dive deeper into the ocean of knowledge</h1><br>
+    <p id="grad">
+  <input type="radio" onclick="showDiv ('1')" name="click" id="show"> Undergraduate</input>&nbsp;
+    <input type="radio" onclick="showDiv ('2')" name="click" id="shows"> Graduate Degree </input><br><br>
+&nbsp;
+    
+    <div id="1" class="hidden"> School: <input type="text" id="schools" name="schools">&nbsp;
+  Major: <input type="text" id="maj" name="maj"><br><br>&nbsp;
+  Degree Type: <input type="text" id="deg" name="deg">&nbsp;
+  Year: <input type="text" id="taon" name="taon"><br>&nbsp;
+    </div><br>
+
+    <div id="2" class="hidden"> School: <input type="text" id="schl" name="schl">&nbsp;
+  Major: <input type="text" id="jor" name="jor"><br><br>&nbsp;
+  Degree Type: <input type="text" id="ree" name="ree">&nbsp;
+  Year: <input type="text" id="yea" name="yea"><br><br>&nbsp;
+  Special Award: <input type="text" id="award" name="award">&nbsp;
+    </div><br>
+  </p>
+  
+  <p>Time Available: <input type="text" id="avail" name="avail"required></p><br>
+  <p>Days Available: <input type="text" id="hayst" name="hayts"required></p><br>
+  <p>Hours Available: <input type="text" id="oras" name="oras"required></p><br>
+  <p>Subject to Teach: <input type="text" id="teach" name="teach"required></p><br>
+  <button><a href="Applicantlast.html">Proceed</a></button>
+    </center>
+    
+ </form> 
+  
+    
+
+
+</body>
+</html>
+
+
+
+
+

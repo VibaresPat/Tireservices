@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tutoring.com</title>
+<style>
+	*{ margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family:sans-serif; 
+
+}
+h1{
+	font-family:Pangolin;
+	font-size: 30px;
+	
+}
+nav{
+	background: rgb(95, 122, 84);
+	position:fixed;
+	width: 100%;
+	z-index: 999;
+	height: 65px;
+	line-height: 65px;
+}
+nav p{
+	max-width: 1250px;
+	padding: 0 30px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: #f2f2f2;
+	font-size: 35px;
+	font-family: Lobster;
+
+}
+
+
+</style>
+<style >
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+</style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+</style> 
+</head>
+<body style="background: url('{% static 'Image/14.jpg' %}') no-repeat fixed; background-size: cover;">
+	<nav>
+		<p> Tutoring.com </p>
+			</div>		
+	</nav>
+
+<form class="form" action="" method="POST">
+  	{% csrf_token %}
+	<center><br><br><br><br><br>
+  	<h1>With us, dive deeper into the ocean of knowledge</h1><br><br>
+  	<p id="Student"><input type="text" id="Childname" name="Childname" placeholder="Student Name" required> </p><br>
+  	<p id="Guardian"><input type="text" id="Guardianname" name="Guardianname" placeholder="Guardian Name" required></p><br>
+ 	<p id="Edad"><input type="Number" id="Age" name="Age" placeholder="Age of Student" required> </p><br> 
+	<p id="Cell"><input type="text" id="Cellphone" name="Cellphone" placeholder="Cellphone Number" required> </p><br> 
+	<p id="Loc"><input type="text" id="Location" name="Location" placeholder="Address" required> </p><br> 
+	<p id="Email"><input type="text" id="mail" name="mail" placeholder="Gmail"required> </p><br>
+  	
+
+  	<button> <a href="Scheduling.html">Proceed</a></button>
+  
+  	</center>
+  </form> 
+	
+		
+
+</body>
+</html>

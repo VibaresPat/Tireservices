@@ -1,54 +1,83 @@
 from django.shortcuts import redirect, render
-from .models import Customer,Admin,Home,InputLog,Seconddisplay,ThirdDisplay,FourthPrice,fifthAppointment,AnimHomeservices
-
+from .models import ClientInfo, Scheduling, Payment, Paymentmethod, ApplicantInfo, ApplicantDetails, ApplicantTransfer
 # from .models import User, Info
 
-def una(request):
+def home(request):
 
-	return render(request,'una.html')
+	return render(request,'home.html')
 
-def PatPat(request):
+def Clientinfos(request):
 
-	Admin=Walk.objects.create(
-		Walk = request.POST['COOSE'],
-		invent = request.POST['CHOO'],
-		)
+	# Admin=Walk.objects.create(
+	# 	Walk = request.POST['COOSE'],
+	# 	invent = request.POST['CHOO'],
+	# 	)
 
-	Customer=Appoint.objects.create(
-		sched = request.POST['CHSE'],
+	# Customer=Appoint.objects.create(
+	# 	sched = request.POST['CHSE'],
 		
-		)
-	Home=Home.objects.create(
-		home = request.POST['CHOO'],
+	# 	)
+	# Home=Home.objects.create(
+	# 	home = request.POST['CHOO'],
 					
-		)	
-	return redirect('Call')
+	# 	)	
+	return render(request,'ClientInfo.html')
 	
-def Vibaaaaa(request):
+def sched(request):
+	# Admin=Walk.objects.create(
+	# 	Walk = request.POST['COOSE'],
+	# 	invent = request.POST['CHOO'],
+	# 	)
 
-	return render(request,'panglima.html')
+	# Customer=Appoint.objects.create(
+	# 	sched = request.POST['CHSE'],
+		
+	# 	)
+	# Home=Home.objects.create(
+	# 	home = request.POST['CHOO'],
+					
+	# 	)
+	return render(request,'Scheduling.html')
+
+def pay(request):
+	# Admin=Walk.objects.create(
+	# 	Walk = request.POST['COOSE'],
+	# 	invent = request.POST['CHOO'],
+	# 	)
+
+	# Customer=Appoint.objects.create(
+	# 	sched = request.POST['CHSE'],
+		
+	# 	)
+	# Home=Home.objects.create(
+	# 	home = request.POST['CHOO'],
+					
+	# 	)
+	return render(request,'paymentmethod.html')
 
 
-def panglima(request):
+def nice(request):
 
-	return render(request,'panglima.html')
-
-def chhuuyyy(request):
-	AnimHomeservices = anim.objects.create(
-		Name = request.POS['Name'],
-		CP = request.POST ['CP'],
-		Add = request.POST ['Add'],
-		arawngpunta =request.POST['arawngpunta'],
-		Orasngpunta =request.POST['Orasngpunta'],
-		sasakyan =request.POST['sasakyan']
-		)
-
-	return redirect('next')
-
-def chhhayy(request):
-	return render(request,'pangatlo.html')
+	return render(request,'home.html')
 
 
+	
+
+def applicant(request):
+
+	return render(request,'ApplicantInfo.html')
+
+
+
+
+def app(request):
+
+	return render(request, 'details.html')
+
+
+def last(request):
+
+	return render(request, 'Applicantlast.html')
 
 
 

@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tutoring.com</title>
+<style>
+	*{ margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family:sans-serif;
+  
+}
+h1{
+	font-family: Pangolin;
+	font-size: 30px;
+}
+nav{
+	background: rgb(95, 122, 84);
+	position:fixed;
+	width: 100%;
+	z-index: 999;
+	height: 65px;
+	line-height: 65px;
+
+
+}
+nav p{
+	max-width: 1250px;
+	padding: 0 30px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: #f2f2f2;
+	font-size: 35px;
+	font-family: Lobster;
+}
+
+.hidden
+        {
+            display:none;
+            
+        }
+        .shown
+        {
+            display:block;
+
+        }
+
+</style>
+<style >
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+</style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+</style>
+</head>
+
+<script type="text/javascript">
+      function showDiv (divId)
+        {
+          var div = document.getElementById (divId);
+          var divs = document.getElementsByTagName('div');
+          for (var i in divs) 
+          {
+            divs [i].className = "hidden";
+          }
+          div.className = "shown";
+        }
+    </script>
+		
+<body style="background: url('{% static 'Image/14.jpg' %}') no-repeat fixed; background-size: cover;">
+	<nav>	
+		<p> Tutoring.com </p>			
+	</nav>
+
+<form class="form" action="" method="POST">
+  	{% csrf_token %}
+	<center><br><br><br><br><br>
+
+  	<h1>With us, dive deeper into the ocean of knowledge</h1><br><br>
+  	<p>Willing for home visiting tutor or student come from your house?</p><br>
+  	<p id="que">
+	<input type="radio" id="yes" name="question" value="Yes"> Yes
+	<input type="radio" id="no" name="question" value="No"> No<br><br><br>
+	</p>
+
+
+	<p>Choose for Transfering your salary</p><br>
+	<p id="Transfering">
+	<input type="radio" onclick="showDiv ('1')" name="slt" id="salary" value="Gcash"> Gcash</input> &nbsp;&nbsp;
+    <input type="radio" onclick="showDiv ('2')" name="slt" id="slry" value="Bank Account "> Bank Account </input>
+&nbsp;&nbsp;
+    <input type="radio" onclick="showDiv ('3')" name="slt" id="sltss" value="Credit Card"> Credit Card </input><br><br>
+&nbsp;&nbsp;
+    
+    <div id="1" class="hidden"> Gcash Number: <input type="text" id="gcashh" name="gcashh">&nbsp;
+    </div><br>
+
+    <div id="2" class="hidden"> Account Holder: <input type="text" id="hold" name="hold">&nbsp;
+	Account Number: <input type="text" id="carddy" name="carddy"><br><br>&nbsp;
+	Bank Name: <input type="text" id="bankyy" name="bankyy"><br><br>&nbsp;
+
+    </div><br>
+	
+	<div id="3" class="hidden"> Account Holder: <input type="text" id="acc" name="acc">&nbsp;
+	Card Name: <input type="text" id="nice" name="nice"><br><br>&nbsp;
+    </div>
+	</p>
+  	<button><a href="home.html">Proceed</a></button>
+  	</center>
+	
+  	
+ </form> 
+</body>
+</html>
+
+
+
+
+

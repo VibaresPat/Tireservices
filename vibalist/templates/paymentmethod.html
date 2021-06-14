@@ -1,0 +1,220 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tutoring.com</title>
+<style>
+	*{ margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family:sans-serif;
+  
+}
+h1{
+	font-family: Pangolin;
+	font-size: 30px;
+}
+nav{
+	background: rgb(95, 122, 84);
+	position:fixed;
+	width: 100%;
+	z-index: 999;
+	height: 65px;
+	line-height: 65px;
+
+
+}
+nav p{
+	max-width: 1250px;
+	padding: 0 30px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: #f2f2f2;
+	font-size: 35px;
+	font-family: Lobster;
+}
+
+.hidden
+        {
+            display:none;
+            
+        }
+        .shown
+        {
+            display:block;
+
+        }
+
+</style>
+<style >
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+</style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+</style>
+</head>
+
+<script type="text/javascript">
+      function showDiv (divId)
+        {
+          var div = document.getElementById (divId);
+          var divs = document.getElementsByTagName('div');
+          for (var i in divs) 
+          {
+            divs [i].className = "hidden";
+          }
+          div.className = "shown";
+        }
+    </script>
+
+<script>
+	  function multiply()
+{
+    a = Number(document.getElementById('Quantity').value);
+    b = Number(document.getElementById('Price').value);
+    c = a * b;
+    document.getElementById('TOTAL').value = c;
+    d = Number(document.getElementById('Quantity1').value); 
+    e = d * c;
+    document.getElementById('TOTAL2').value = e;
+}
+
+  	</script>  
+		
+ 
+		
+<body style="background: url('{% static 'Image/14.jpg' %}') no-repeat fixed; background-size: cover;">
+	<nav>	
+		<p> Tutoring.com </p>			
+	</nav>
+
+<form class="form" action="" method="POST">
+  	{% csrf_token %}
+	<center><br><br><br><br>
+
+  	<h1>With us, dive deeper into the ocean of knowledge</h1><br>
+	<p><b>Teaching Price</b></p><br>
+  	How many hours: <input type="number" value="" name="Quantity" id="Quantity" min="1" max="5" onKeyUp="multiply()" placeholder="5 hours is the Maximum" />
+  	<input type="hidden" name="Price" id="Price" value="150" />
+  	Price: <input type="text" name="TOTAL" id="TOTAL" /><br><br>
+   
+  	How many days: <input type="text" value="" name="Quantity1" id="Quantity1" onKeyUp="multiply()"/>
+	Total: <input type="text" name="TOTAL2" id="TOTAL2" /><br><br>
+
+
+	<p><b>Payment Methods</b></p><br>
+	<p>We Accept:</p><br>
+	<p id="selectsss">
+	<input type="radio" onclick="showDiv ('1')" name="selectmethod" id="selectmethod" value="BANK ACCOUNT"> BANK ACCOUNT</input> &nbsp;
+    <input type="radio" onclick="showDiv ('2')" name="selectmethod" id="slctmthd" value="GCASH"> GCASH </input>&nbsp;
+    <input type="radio" onclick="showDiv ('3')" name="selectmethod" id="slectmthod" value="CREDIT CARD"> CREDIT CARD </input><br><br>&nbsp;
+   
+    <div id="1" class="hidden"> Account Holder: <input type="text" id="Holder" name="Holder">&nbsp;
+	Bank Name: <input type="text" id="Bank" name="Bank"><br><br>&nbsp;
+	Account Number: <input type="text" id="Account" name="Account">&nbsp;
+	Routing Number: <input type="text" id="Routing" name="Routing"><br>&nbsp;
+	<p id= "pay"> Payment Amount:</p>
+	<input type="text" id="payment" name="payment"><br>&nbsp;
+    </div>
+
+    <div id="2" class="hidden"><p>Number of the Company : 09098860459</p>
+  	<p>Note* State the name of the child and the guardian.</p>
+    </div><br>
+
+
+    <div id="3" class="hidden"> Enter Payment Amount: <input type="text" id="Amount" name="Amount">&nbsp;
+	Card Number: <input type="text" id="card" name="card"><br><br>&nbsp;
+	Expiry date: <input type="text" id="Expiry" name="Expiry">&nbsp;
+	Security Code: <input type="text" id="code" name="code"><br>&nbsp;
+	<p id= "postal"> Zip/Postal Code:</p> 
+	<input type="text" id="zips" name="zips"><br><br>&nbsp;
+    </div>
+	</p>
+  	<button> <a href="home.html">Proceed</a></button>
+  	</center>
+  	
+ </form> 
+	
+		
+
+
+</body>
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+  <tr>
+  <td>How many hours:</td>
+  <td><input type="text" value="" name="QTY" id="QTY" onKeyUp="multiply()"/></td>
+  <td><input type="hidden" name="PPRICE" id="PPRICE" value="150" /></td>
+  <td><input type="text" name="TOTAL" id="TOTAL" /></td>
+   <td>How many days:</td>
+  <td><input type="text" value="" name="QTY1" id="QTY1" onKeyUp="multiply()"/></td>
+	<td><input type="text" name="TOTAL2" id="TOTAL2" /></td>
+	
+</tr>
+	<script>
+	  function multiply()
+{
+    a = Number(document.getElementById('QTY').value);
+    b = Number(document.getElementById('PPRICE').value);
+    c = a * b;
+    document.getElementById('TOTAL').value = c;
+    d = Number(document.getElementById('QTY1').value); 
+    e = d * c;
+    document.getElementById('TOTAL2').value = e;
+}
+
+  </script>  
+		
+		
+	
+</html> -->
+
+
+<!-- 
+<html>
+  <head>
+    <script type="text/javascript">
+        function showDiv (divId)
+        {
+          var div = document.getElementById (divId);
+          var divs = document.getElementsByTagName('div');
+          for (var i in divs) 
+          {
+            divs [i].className = "hidden";
+          }
+          div.className = "shown";
+        }
+    </script>
+    <style>
+        .hidden
+        {
+            display:none;
+        }
+        .shown
+        {
+            display:block;
+        }
+    </style>
+  </head>
+  <body>
+        <input type="radio" onclick="showDiv ('1')" name="selectme">Home Visiting</input>
+        <input type="radio" onclick="showDiv ('2')" name="selectme">Online</input>
+        <input type="radio" onclick="showDiv ('3')" name="selectme">Tutor House</input>
+     
+
+        <div id="1" class="hidden">Note* This are expected that there's an aditional payment</div>
+        <div id="2" class="hidden"></div>
+        <div id="3" class="hidden"></div>
+      
+
+  </body>
+</html> -->
