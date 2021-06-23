@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tutoring.com</title>
+  <title>iTutor.Phil</title>
 <style>
   *{ margin: 0px;
   padding: 0px;
@@ -71,18 +71,26 @@ nav p{
     
 <body style="background: url('{% static 'Image/14.jpg' %}') no-repeat fixed; background-size: cover;">
   <nav> 
-    <p> Tutoring.com </p>     
+    <p> iTutor.Phil </p>     
   </nav>
 
-<form class="form" action="Call" method="POST">
+<form class="form" action="Applicantlast" method="POST">
     {% csrf_token %}
   <center><br><br><br><br><br>
 
     <h1>With us, dive deeper into the ocean of knowledge</h1><br>
-    <p id="grad">
-  <input type="radio" onclick="showDiv ('1')" name="click" id="show"> Undergraduate</input>&nbsp;
-    <input type="radio" onclick="showDiv ('2')" name="click" id="shows"> Graduate Degree </input><br><br>
-&nbsp;
+
+    <select id="grad" name="grad">
+     <option value="" disabled selected>Choose your Teaching Environment</option>
+     <option value="1" id="Undergraduate" name="Undergraduate" onclick="showDiv ('1')" >Undergraduate</option>
+     <option value="2" id="Graduate Degree" name="Graduate Degree" onclick="showDiv ('2')">Graduate Degree</option>
+    
+     
+     </select>
+    <!-- <p id="grad">
+  <input type="radio" onclick="showDiv ('1')" name="click" id="shows" value="1"> Undergraduate</input>&nbsp;
+  <input type="radio" onclick="showDiv ('2')" name="click" id="shows" value="2"> Graduate Degree </input><br><br>
+&nbsp; -->
     
     <div id="1" class="hidden"> School: <input type="text" id="schools" name="schools">&nbsp;
   Major: <input type="text" id="maj" name="maj"><br><br>&nbsp;
@@ -102,7 +110,7 @@ nav p{
   <p>Days Available: <input type="text" id="hayst" name="hayts"required></p><br>
   <p>Hours Available: <input type="text" id="oras" name="oras"required></p><br>
   <p>Subject to Teach: <input type="text" id="teach" name="teach"required></p><br>
-  <button><a href="Applicantlast.html">Proceed</a></button>
+  <input type="submit" id="pat" name="pat" value="Proceed"/>
     </center>
     
  </form> 

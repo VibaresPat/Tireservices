@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tutoring.com</title>
+	<title>iTutor.Phil</title>
 <style>
 	*{ margin: 0px;
   padding: 0px;
@@ -47,10 +47,10 @@ nav p{
 
 <body style="background: url('{% static 'Image/14.jpg' %}') no-repeat fixed; background-size: cover;">
 	<nav>	
-		<p> Tutoring.com </p>			
+		<p> iTutor.Phil</p>			
 	</nav>
 
-<form class="form" action="" method="POST">
+<form class="form" action="details" method="POST">
     {% csrf_token %}
   <center><br><br><br><br><br>
     <h1>With us, dive deeper into the ocean of knowledge</h1><br><br>
@@ -61,7 +61,7 @@ nav p{
     <p><input type="text" id="ress" name="ress" placeholder="Address" required></p><br>
     <p><input type="text" id="zipss" name="zipss" placeholder="ZIP Code" required></p><br>
 
- 	<button> <a href="details.html">Proceed</a> </button>
+ 	<input type="submit" id="pat" name="pat" value="Proceed"/>
     </center>
   </form> 
 </body>

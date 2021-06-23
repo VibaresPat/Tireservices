@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tutoring.com</title>
+	<title>iTutor.Phil</title>
 <style>
 	*{ margin: 0px;
   padding: 0px;
@@ -47,15 +47,15 @@ nav p{
 </head>
 <body style="background: url('{% static 'Image/14.jpg' %}') no-repeat fixed; background-size: cover;">
 	<nav>
-		<p> Tutoring.com </p>
+		<p> iTutor.Phil </p>
 			</div>		
 	</nav>
 
-<form class="form" action="" method="POST">
+<form class="form" action="Scheduling" method="POST">
   	{% csrf_token %}
 	<center><br><br><br><br><br>
   	<h1>With us, dive deeper into the ocean of knowledge</h1><br><br>
-  	<p id="Student"><input type="text" id="Childname" name="Childname" placeholder="Student Name" required> </p><br>
+  	<input type="text" id="Childname" name="Childname" placeholder="Student Name" required> </p><br>
   	<p id="Guardian"><input type="text" id="Guardianname" name="Guardianname" placeholder="Guardian Name" required></p><br>
  	<p id="Edad"><input type="Number" id="Age" name="Age" placeholder="Age of Student" required> </p><br> 
 	<p id="Cell"><input type="text" id="Cellphone" name="Cellphone" placeholder="Cellphone Number" required> </p><br> 
@@ -63,7 +63,9 @@ nav p{
 	<p id="Email"><input type="text" id="mail" name="mail" placeholder="Gmail"required> </p><br>
   	
 
-  	<button> <a href="Scheduling.html">Proceed</a></button>
+ 	<input type="submit" id="pat" name="pat" value="Proceed" />
+
+
   
   	</center>
   </form> 

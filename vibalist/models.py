@@ -4,18 +4,15 @@ class ClientInfo(models.Model):
 	
 
 	#clientInfo
-	Childname =models.CharField(max_length=10, default='none')
-	Guardianname =models.CharField(max_length=10, default='none')
-	Age =models.CharField(max_length=10, default='none')
-	Cellphone =models.CharField(max_length=10, default='none')
-	Location =models.CharField(max_length=10, default='none')
-	mail =models.CharField(max_length=10, default='none')
+	Childname = models.CharField(max_length=10, default='none')
+	Guardianname = models.CharField(max_length=10, default='none')
+	Age = models.CharField(max_length=10, default='none')
+	Cellphone = models.CharField(max_length=10, default='none')
+	Location = models.CharField(max_length=10, default='none')
+	mail = models.CharField(max_length=10, default='none')
 
 	def __str__(self):
 		return self.Childname 
-
-
-
 
 	#scheduling
 class Scheduling(models.Model):
@@ -26,16 +23,14 @@ class Scheduling(models.Model):
 	Time = models.TimeField(null=True)
 	Message =models.TextField(max_length=2000, default='none')
 
-	choices =(('selecthome', 'Home Visiting'), ('selectonline', 'Online'), ('selecthouse', 'Teacher House'))
-	sltss =models.CharField(max_length=25, choices=choices, default='none')
+	choices =(('1', 'Home Visiting'), ('2', 'Online'), ('3', 'Teacher House'))
+	select =models.CharField(max_length=25, choices=choices, default='none')
 
-	picka =(('min', 'Mindanao'), ('vis', 'Visayas'), ('luz', 'Luzon'), ('metro', 'Metro Manila'))
+	picka =(('1', 'Mindanao'), ('2', 'Visayas'), ('3', 'Luzon'), ('4', 'Metro Manila'))
 	place =models.CharField(max_length=25, choices=picka, default='none')
 
-	Transportation_Amount=models.CharField(max_length=10, default='none')
+	TransportationAmount=models.CharField(max_length=10, default='none')
 	
-	def __str__(self):
-		return self.Date
 
 
 class Payment(models.Model):
@@ -43,17 +38,15 @@ class Payment(models.Model):
 	Quantity =models.IntegerField(null=True)
 	TOTAL =models.IntegerField(null=True)
 	Quantity1 =models.IntegerField(null=True)
-	TOTAL2 = models.TimeField(null=True)
+	TOTAL2 = models.IntegerField(null=True)
 
-	def __str__(self):
-		return self.Quantity
 
 
 class Paymentmethod(models.Model):
 
 
-	choice =(('selectmethod', 'BANK ACCOUNT'), ('slctmthd', 'GCASH'), ('slectmthod', 'CREDIT CARD'))
-	selectsss =models.CharField(max_length=25, choices=choice, default='none')
+	choice1 =(('1', 'BANK ACCOUNT'), ('2', 'GCASH'), ('3', 'CREDIT CARD'))
+	selectsss =models.CharField(max_length=25, choices=choice1, default='none')
 
 	Holder =models.CharField(max_length=10, default='none')
 	Bank =models.CharField(max_length=10, default='none')
@@ -66,8 +59,7 @@ class Paymentmethod(models.Model):
 	code =models.CharField(max_length=10, default='none')
 	zips =models.CharField(max_length=10, default='none')
 
-	def __str__(self):
-		return self.selectsss
+
 
 class ApplicantInfo(models.Model):
 
@@ -84,8 +76,8 @@ class ApplicantInfo(models.Model):
 class ApplicantDetails(models.Model):
 
 
-	choices =(('selectmethod', 'BANK ACCOUNT'), ('slctmthd', 'GCASH'), ('slectmthod', 'CREDIT CARD'))
-	grad =models.CharField(max_length=25, choices=choices, default='none')
+	choices2 =(('1', 'Undergraduate'), ('2', 'Graduate Degree'))
+	grad =models.CharField(max_length=25, choices=choices2, default='none')
 
 	schools =models.CharField(max_length=10, default='none')
 	maj =models.CharField(max_length=10, default='none')
@@ -101,8 +93,7 @@ class ApplicantDetails(models.Model):
 	oras =models.CharField(max_length=10, default='none')
 	teach =models.CharField(max_length=10, default='none')
 
-	def __str__(self):
-		return self.grad
+
 
 class ApplicantTransfer(models.Model):
 

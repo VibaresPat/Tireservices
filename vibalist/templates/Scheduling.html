@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tutoring.com</title>
+	<title>iTutor.Phil</title>
 <style>
 	*{ margin: 0px;
   padding: 0px;
@@ -72,7 +72,7 @@ nav p{
             function calculateAmount(val) {
                 var tot_price = val * 90;
                 /*display the result*/
-                var divobj = document.getElementById('Transportation_Amount');
+                var divobj = document.getElementById('TransportationAmount');
                 divobj.value = tot_price;
             }
             
@@ -80,10 +80,10 @@ nav p{
 
 <body style="background: url('{% static 'Image/14.jpg' %}') no-repeat fixed; background-size: cover;">
 	<nav>	
-		<p> Tutoring.com </p>			
+		<p> iTutor.Phil</p>			
 	</nav>
 
-<form class="form" action="" method="POST">
+<form class="form" action="paymentmethod" method="POST">
   	{% csrf_token %}
 	<center><br><br><br><br>
   	<h1>With us, dive deeper into the ocean of knowledge</h1><br>
@@ -97,32 +97,35 @@ nav p{
  	
  
 	<p id="sltss">
-  	<input type="radio" onclick="showDiv ('1')" name="selects" id="selecthome" value="Home Visiting"> Home Visiting</input>
-    <input type="radio" onclick="showDiv ('2')" name="selects" id="selectonline" value="Online"> Online</input>
-    <input type="radio" onclick="showDiv ('3')" name="selects" id="selecthouse" value="Teacher House"> Teacher House</input><br><br>
-   
+  	 <select id="select" name="select">
+     <option value="" disabled selected>Choose your Teaching Environment</option>
+     <option value="1" id="selecthome" name="Home Visiting" onclick="showDiv ('1')" >Home Visiting</option>
+     <option value="2" id="selectonline" name="Online" onclick="showDiv ('2')">Online</option>
+     <option value="3" id="selecthouse" name="Teacher House" onclick="showDiv ('3')">Teacher House</option>
+     
+     </select>
     <div id="1" class="hidden">
 
     <input type="hidden" name="mode" value="PinRequest" id="place"/>
    	<b>Transportation Amount</b>
 
-     <select name="tot_pin_requested" onchange="calculateAmount(this.value)" required>
+     <select name="tot_pin_requested" onchange="calculateAmount(this.value)" id="tot_pin_requested">
      <option value="" disabled selected>Choose your Location</option>
-     <option value="1" id="min" name="min">Mindanao</option>
-     <option value="2" id="vis" name="vis">Visayas</option>
-     <option value="3" id="luz" name="luz">Luzon</option>
-     <option value="4" id="metro" name="metro">Metro Manila</option>
+     <option value="1" id="Mindanao" name="Mindanao">Mindanao</option>
+     <option value="2" id="Visayas" name="Visayas">Visayas</option>
+     <option value="3" id="Luzon" name="Luzon">Luzon</option>
+     <option value="4" id="Metro Manila" name="Metro Manila">Metro Manila</option>
      </select>
 
    	<b>Price:</b>
-    <input class="w3-input w3-border" name="Transportation_Amount" id="Transportation_Amount" type="text"></div>
+    <input class="w3-input w3-border" name="TransportationAmount" id="TransportationAmount" type="text"></div>
 
 
     <div id="2" class="hidden"></div>
     <div id="3" class="hidden"></div><br><br>
 	</p>
 
-	<p><button><a href="paymentmethod.html">Proceed</a></button></p>
+	<input type="submit" id="pat" name="pat" value="Proceed"/>
 
 
 

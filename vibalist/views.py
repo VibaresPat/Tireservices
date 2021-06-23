@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from .models import ClientInfo, Scheduling, Payment, Paymentmethod, ApplicantInfo, ApplicantDetails, ApplicantTransfer
-# from .models import User, Info
+
 
 def home(request):
 
@@ -8,74 +8,105 @@ def home(request):
 
 def Clientinfos(request):
 
-	# Admin=Walk.objects.create(
-	# 	Walk = request.POST['COOSE'],
-	# 	invent = request.POST['CHOO'],
-	# 	)
-
-	# Customer=Appoint.objects.create(
-	# 	sched = request.POST['CHSE'],
-		
-	# 	)
-	# Home=Home.objects.create(
-	# 	home = request.POST['CHOO'],
-					
-	# 	)	
 	return render(request,'ClientInfo.html')
 	
 def sched(request):
-	# Admin=Walk.objects.create(
-	# 	Walk = request.POST['COOSE'],
-	# 	invent = request.POST['CHOO'],
-	# 	)
+	
+	client=ClientInfo.objects.create(
+		Childname = request.POST['Childname'],
+		Guardianname = request.POST['Guardianname'],
+		Age = request.POST['Age'],
+		Cellphone = request.POST['Cellphone'],
+		Location = request.POST['Location'],
+		mail = request.POST['mail'],
+	)
 
-	# Customer=Appoint.objects.create(
-	# 	sched = request.POST['CHSE'],
-		
-	# 	)
-	# Home=Home.objects.create(
-	# 	home = request.POST['CHOO'],
-					
-	# 	)
 	return render(request,'Scheduling.html')
 
 def pay(request):
-	# Admin=Walk.objects.create(
-	# 	Walk = request.POST['COOSE'],
-	# 	invent = request.POST['CHOO'],
-	# 	)
 
-	# Customer=Appoint.objects.create(
-	# 	sched = request.POST['CHSE'],
-		
-	# 	)
-	# Home=Home.objects.create(
-	# 	home = request.POST['CHOO'],
-					
-	# 	)
+	scd = Scheduling.objects.create(
+		Date = request.POST['Date'],
+		Subject1 = request.POST['Subject1'],
+		Schedule = request.POST['Schedule'],
+		Time =  request.POST['Time'],
+		Message = request.POST['Message'],	
+		select = request.POST['select'],
+		place = request.POST['tot_pin_requested'],	
+		TransportationAmount= request.POST['TransportationAmount'],
+	)
+	
 	return render(request,'paymentmethod.html')
 
 
 def nice(request):
 
+	bayad = Payment.objects.create(
+		Quantity = request.POST['Quantity'],
+		TOTAL = request.POST['TOTAL'],
+		Quantity1 = request.POST['Quantity1'],
+		TOTAL2 = request.POST['TOTAL2'],
+
+	)
+ 
+	bayad2 = Paymentmethod.objects.create(
+ 		selectsss = request.POST['selectsss'],
+ 		Holder = request.POST['Holder'], 
+		Bank = request.POST['Bank'],
+		Account = request.POST['Account'],
+		Routing = request.POST['Routing'],
+		payment = request.POST['payment'],
+		Amount = request.POST['Amount'],
+		card = request.POST['card'],
+		Expiry = request.POST['Expiry'],
+		code = request.POST['code'],
+		zips = request.POST['zips'],
+ 	)
+
+	return render(request,'reciept.html')
+
+def home(request):
+
 	return render(request,'home.html')
 
 
-	
-
-def applicant(request):
+def applicants(request):
 
 	return render(request,'ApplicantInfo.html')
 
-
-
-
 def app(request):
+
+	method = ApplicantInfo.objects.create(
+		applicant = request.POST['applicant'],
+		last = request.POST['last'],
+		email = request.POST['email'],
+		cell = request.POST['cell'],
+		ress = request.POST['ress'],
+		zipss = request.POST['zipss'],
+	)
 
 	return render(request, 'details.html')
 
 
 def last(request):
+
+	dtls= ApplicantDetails.objects.create(
+		grad = request.POST['grad'],
+		schools = request.POST['schools'],
+		maj = request.POST['maj'],
+		deg = request.POST['deg'],
+		taon = request.POST['taon'],
+		schl = request.POST['schl'],
+		jor = request.POST['jor'],
+		ree = request.POST['ree'],
+		yea = request.POST['yea'],
+		award = request.POST['award'],
+		avail = request.POST['avail'],
+		hayts = request.POST['hayts'],
+		oras = request.POST['oras'],
+		teach = request.POST['teach'],
+	)
+
 
 	return render(request, 'Applicantlast.html')
 
@@ -154,62 +185,5 @@ def last(request):
 
 
 
-
-
-
-
-'''# Create your views here.
-def Lods(request):
-
-
-
-	
-	if request.method == 'POST':
-
-
-		ict = User.objects.create()
-		Item.objects.create(
-			firstname = request.POST['firstname'],
-			Gmail= request.POST['Gmail'], 
-			birthday = request.POST['birthday'],
-			coursesection = request.POST['coursesection'], 
-			letter = request.POST['letter'],
-			lesson = request.POST['lesson'],
-			)
-		return redirect('vibbsss')
-		
-		
-		pat = Item()
-		pat.firstname = firstname
-		pat.Gmail = Gmail
-		pat.birthday = birthday
-		pat.coursesection = coursesection
-		pat.letter = letter
-		pat.lesson = lesson
-		pat.save()
-
-	return render (request,'una.html')	
-
-
-
-
-def Page(request):
-	pat = Item.objects.all().order_by('firstname')
-	return render(request,'second.html', {'pat':pat})
-	  
-
-
-
-
-
-	
-	
-
-from django.http import HttpResponse
-from django.shortcuts import render
-
-def homepage(request):
-	#return HttpResponse('homepage')
-	return render(request, 'homepage.html')'''
 
 

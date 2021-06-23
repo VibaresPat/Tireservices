@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tutoring.com</title>
+	<title>iTutor.Phil</title>
 <style>
 	*{ margin: 0px;
   padding: 0px;
@@ -87,16 +87,16 @@ nav p{
 		
 <body style="background: url('{% static 'Image/14.jpg' %}') no-repeat fixed; background-size: cover;">
 	<nav>	
-		<p> Tutoring.com </p>			
+		<p> iTutor.Phil </p>			
 	</nav>
 
-<form class="form" action="" method="POST">
+<form class="form" action="reciept" method="POST">
   	{% csrf_token %}
 	<center><br><br><br><br>
 
   	<h1>With us, dive deeper into the ocean of knowledge</h1><br>
 	<p><b>Teaching Price</b></p><br>
-  	How many hours: <input type="number" value="" name="Quantity" id="Quantity" min="1" max="5" onKeyUp="multiply()" placeholder="5 hours is the Maximum" />
+  	How many hours: <input type="text" value="" name="Quantity" id="Quantity" onKeyUp="multiply()" placeholder="5 hours is the Maximum" />
   	<input type="hidden" name="Price" id="Price" value="150" />
   	Price: <input type="text" name="TOTAL" id="TOTAL" /><br><br>
    
@@ -106,10 +106,18 @@ nav p{
 
 	<p><b>Payment Methods</b></p><br>
 	<p>We Accept:</p><br>
-	<p id="selectsss">
+
+   <select id="selectsss" name="selectsss">
+     <option value="" disabled selected>Choose your Teaching Environment</option>
+     <option value="1" id="BANK ACCOUNT" name="BANK ACCOUNT" onclick="showDiv ('1')" >BANK ACCOUNT</option>
+     <option value="2" id="GCASH" name="GCASH" onclick="showDiv ('2')" >GCASH</option>
+     <option value="3" id="CREDIT CARD" name="CREDIT CARD" onclick="showDiv ('3')" >CREDIT CARD</option>
+     
+     </select>
+	<!-- <p id="selectsss">
 	<input type="radio" onclick="showDiv ('1')" name="selectmethod" id="selectmethod" value="BANK ACCOUNT"> BANK ACCOUNT</input> &nbsp;
     <input type="radio" onclick="showDiv ('2')" name="selectmethod" id="slctmthd" value="GCASH"> GCASH </input>&nbsp;
-    <input type="radio" onclick="showDiv ('3')" name="selectmethod" id="slectmthod" value="CREDIT CARD"> CREDIT CARD </input><br><br>&nbsp;
+    <input type="radio" onclick="showDiv ('3')" name="selectmethod" id="slectmthod" value="CREDIT CARD"> CREDIT CARD </input><br><br>&nbsp; -->
    
     <div id="1" class="hidden"> Account Holder: <input type="text" id="Holder" name="Holder">&nbsp;
 	Bank Name: <input type="text" id="Bank" name="Bank"><br><br>&nbsp;
@@ -132,7 +140,7 @@ nav p{
 	<input type="text" id="zips" name="zips"><br><br>&nbsp;
     </div>
 	</p>
-  	<button> <a href="home.html">Proceed</a></button>
+  	<input type="submit" id="pat" name="pat" value="Proceed"/>
   	</center>
   	
  </form> 
