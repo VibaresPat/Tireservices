@@ -83,21 +83,22 @@ nav p{
 		<p> iTutor.Phil</p>			
 	</nav>
 
-<form class="form" action="paymentmethod" method="POST">
+
   	{% csrf_token %}
+  <form method="POST" class="" action="/update/{{display1.id}}" >
 	<center><br><br><br><br>
   	<h1>With us, dive deeper into the ocean of knowledge</h1><br>
 
-  	<p id="start">Date to start:  <input type="Date" id="Date" name="Date"required> </p><br>
-  	<p id= "SUBJECT"> Subject: <input type="text" id="Subject1" name="Subject1"></p><br>
+  	<p id="start">Date to start:  <input type="Date" id="Date" name="Date" value="{{ display1.Date }}"required> </p><br>
+  	<p id= "SUBJECT"> Subject: <input type="text" id="Subject1" name="Subject1" value="{{ display1.Subject1 }}"></p><br>
  	  <p id= "course"> Course Type or Grade level: <input type="text" id="Subject2" name="Subject2"></p><br>
-  	<p id="day"> Enter your Schedule day:  <input type="text" id="Schedule" name="Schedule" placeholder="Ex.M-T-W or Monday" required> </p><br>
- 	  <p id="oras"> Enter your Preffered Time:  <input type="Time" id="Time" name="Time" > </p><br>
+  	<p id="day"> Enter your Schedule day:  <input type="text" id="Schedule" name="Schedule" placeholder="Ex.M-T-W or Monday" value="{{display1.Schedule}}" required> </p><br>
+ 	  <p id="oras"> Enter your Preffered Time:  <input type="Time" id="Time" name="Time" value="{{ display1.Time }}" > </p><br>
 	  <p>Description:</p> <textarea id="Message" name="Message" placeholder=""rows="4" cols="50"> </textarea><br><br>
  	
  
 	<p id="sltss">
-  	 <select id="select" name="select">
+  	 <select id="select" name="select" value="{{ display1.select }}">
      <option value="" disabled selected>Choose your Teaching Environment</option>
      <option value="Home Visiting" id="selecthome" name="Home Visiting" onclick="showDiv ('1')" >Home Visiting</option>
      <option value="Online" id="selectonline" name="Online" onclick="showDiv ('2')">Online</option>
@@ -125,18 +126,18 @@ nav p{
     <div id="3" class="hidden"></div><br><br>
 	</p>
 
-	<input type="submit" id="pat" name="pat" value="Proceed"/>
+	<button><a class ="update" type="submit">Update</a></button>
+
   
   	</center>
   	
- </form> 
-	
+
+	</form>
+
 		
 
 
 </body>
 </html>
-
-
 
 

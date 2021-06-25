@@ -23,7 +23,7 @@ class Scheduling(models.Model):
 	Time = models.TimeField(null=True)
 	Message =models.TextField(max_length=2000, default='none')
 
-	choices =(('1', 'Home Visiting'), ('2', 'Online'), ('3', 'Teacher House'))
+	choices =(('Home Visiting', 'Home Visiting'), ('Online', 'Online'), ('Teacher House', 'Teacher House'))
 	select =models.CharField(max_length=25, choices=choices, default='none')
 
 	picka =(('1', 'Mindanao'), ('2', 'Visayas'), ('3', 'Luzon'), ('4', 'Metro Manila'))
@@ -45,7 +45,7 @@ class Payment(models.Model):
 class Paymentmethod(models.Model):
 
 
-	choice1 =(('1', 'BANK ACCOUNT'), ('2', 'GCASH'), ('3', 'CREDIT CARD'))
+	choice1 =(('BANK ACCOUNT', 'BANK ACCOUNT'), ('GCASH', 'GCASH'), ('CREDIT CARD', 'CREDIT CARD'))
 	selectsss =models.CharField(max_length=25, choices=choice1, default='none')
 
 	Holder =models.CharField(max_length=10, default='none')
@@ -76,7 +76,7 @@ class ApplicantInfo(models.Model):
 class ApplicantDetails(models.Model):
 
 
-	choices2 =(('1', 'Undergraduate'), ('2', 'Graduate Degree'))
+	choices2 =(('Undergraduate', 'Undergraduate'), ('Graduate Degree', 'Graduate Degree'))
 	grad =models.CharField(max_length=25, choices=choices2, default='none')
 
 	schools =models.CharField(max_length=10, default='none')
@@ -101,7 +101,7 @@ class ApplicantTransfer(models.Model):
 	chooseee =(('yes', 'Yes'), ('no', 'No'))
 	que =models.CharField(max_length=10, choices=chooseee, default='none')
 
-	pick=(('salary', 'Gcash'), ('slry', 'Bank Account'), ('sltss', 'Credit Card'))
+	pick=(('1', 'Gcash'), ('2', 'Bank Account'), ('3', 'Credit Card'))
 	Transfering =models.CharField(max_length=25, choices=pick, default='none')
 
 
@@ -112,8 +112,7 @@ class ApplicantTransfer(models.Model):
 	acc =models.CharField(max_length=10, default='none')
 	nice =models.CharField(max_length=10, default='none')
 
-	def __str__(self):
-		return self.que
+	
 
 
 

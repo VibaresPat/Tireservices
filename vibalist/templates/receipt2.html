@@ -65,6 +65,12 @@ nav .wrapper {
 	
 
 }
+
+.p{
+	font-family: Lobster;
+	
+
+}
 .nav-links li a:hover{
 	background:  rgb(89, 102, 63);	
 }
@@ -92,7 +98,7 @@ nav .wrapper {
 }
 .div1 {
   width: 500px;
-  height: 500px;
+  height: 450px;
   border: 2px solid green;
   box-sizing: border-box;
 }
@@ -197,32 +203,23 @@ nav .wrapper {
 			</ul>
 		</div>
 	</nav>
-
 <center><br><br><br><br><br>
-	<p style="font-family: Patrick Hand;font-size: 18px;">Congratulations you are now officially enrolled in our program. Your tutor will contact you as soon as possible based on your schedule! Thank you and Godbless!</p><br>
+	<p style="font-family: Patrick Hand;font-size: 18px;">Thank you for applying in our program. We will contact you as soon as possible for the final Interview. Goodbless!</p><br>
 
-<div class="div1"><br>
-	<p style="font-family: Patrick Hand;font-size: 18px;"><b>Name: </b>{{display.Childname}}</p><br>
-	<p style="font-family: Patrick Hand;font-size: 18px;"><b>Hours: </b>{{display2.Quantity}} &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;    <b> Price: </b>{{display2.TOTAL}}</p><br>
-	<p style="font-family: Patrick Hand; font-size: 18px;"><b>Days: </b>{{display2.Quantity1}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <b>Total: </b>{{display2.TOTAL2}}</p><br>
-	<p style="font-family: Patrick Hand;font-size: 18px;"><b>Payment Method: </b>{{display3.selectsss}}</p><br>
-	<p><b><u>DETAILS</b></u></p>
-	<p style="font-family: Patrick Hand;font-size: 18px;"><b>Date to start: </b>{{display1.Date}}</p><br>
-	<p style="font-family: Patrick Hand;font-size: 18px;"><b>Subject: </b>{{display1.Subject1}}</p><br>
-	<p style="font-family: Patrick Hand;font-size: 18px;"><b>Day: </b>{{display1.Schedule}}</p><br>
-	<p style="font-family: Patrick Hand;font-size: 18px;"><b>Time: </b>{{display1.Time}}</p><br>
-	<p style="font-family: Patrick Hand;font-size: 18px;"><b>Teaching Environment: </b>{{display1.select}}</p><br>
-
-	<button><a class="delete" style="text-decoration: none;" href="/delete/{{display1.id}}">Delete Details</a></button>
-	<button><a class="edit"  style="text-decoration: none;" href="/update/{{display1.id}}">Edit Details</a></button><br><br>
+<div class="div1"><br><br>
+	<p style="font-family: Patrick Hand;font-size: 18px;"><b>Name: </b>{{display4.applicant}}</p><br>
+	<p style="font-family: Patrick Hand;font-size: 18px;"><b>Lastname: </b>{{display4.last}}</p><br>
+	<p style="font-family: Patrick Hand;font-size: 18px;"><b>Education Level: </b>{{display5.grad}}</p><br>
+	<p style="font-family: Patrick Hand;font-size: 18px;"><b>Days Available: </b>{{display5.hayts}}</p><br>
+	<p style="font-family: Patrick Hand;font-size: 18px;"><b>Time Available: </b>{{display5.avail}}</p><br>
+	<p style="font-family: Patrick Hand;font-size: 18px;"><b>Hours Available: </b>{{display5.oras}}</p><br>
+	<p style="font-family: Patrick Hand;font-size: 18px;"><b>Subject to Teach: </b>{{display5.teach}}<br><br><br>
 	<button><p><a class="home" style="text-decoration: none;" href="{% url 'home' %}">Home</a></p></button>
 
 </div>
+</form>
 
-
-
-</center>
-
+	<!-- <a class="delete" href="/delete/{{display5.id}}">Delete info</a> -->
 
 </body>
 </html>

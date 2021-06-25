@@ -74,7 +74,7 @@ nav p{
 		<p> iTutor.Phil </p>			
 	</nav>
 
-<form class="form" action="" method="POST">
+<form class="form" action="receipt2" method="POST">
   	{% csrf_token %}
 	<center><br><br><br><br><br>
 
@@ -87,13 +87,23 @@ nav p{
 
 
 	<p>Choose for Transfering your salary</p><br>
-	<p id="Transfering">
+
+
+    <select id="Transfering" name="Transfering">
+     <option value="" disabled selected>Choose your Teaching Environment</option>
+     <option value="1" id="Gcash" name="Gcash" onclick="showDiv ('1')" >Gcash</option>
+     <option value="2" id="Bank Account" name="Bank Account" onclick="showDiv ('2')">Bank Account</option>
+     <option value="3" id="Credit Card" name="Credit Card" onclick="showDiv ('3')">Credit Card</option>
+     
+     </select>
+
+	<!-- <p id="Transfering">
 	<input type="radio" onclick="showDiv ('1')" name="slt" id="salary" value="Gcash"> Gcash</input> &nbsp;&nbsp;
     <input type="radio" onclick="showDiv ('2')" name="slt" id="slry" value="Bank Account "> Bank Account </input>
 &nbsp;&nbsp;
     <input type="radio" onclick="showDiv ('3')" name="slt" id="sltss" value="Credit Card"> Credit Card </input><br><br>
 &nbsp;&nbsp;
-    
+     -->
     <div id="1" class="hidden"> Gcash Number: <input type="text" id="gcashh" name="gcashh">&nbsp;
     </div><br>
 
@@ -107,7 +117,7 @@ nav p{
 	Card Name: <input type="text" id="nice" name="nice"><br><br>&nbsp;
     </div>
 	</p>
-  	<button><a href="home.html">Proceed</a></button>
+  	<input type="submit" id="pat" name="pat" value="Proceed"/>
   	</center>
 	
   	

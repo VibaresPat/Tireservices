@@ -109,16 +109,12 @@ nav p{
 
    <select id="selectsss" name="selectsss">
      <option value="" disabled selected>Choose your Teaching Environment</option>
-     <option value="1" id="BANK ACCOUNT" name="BANK ACCOUNT" onclick="showDiv ('1')" >BANK ACCOUNT</option>
-     <option value="2" id="GCASH" name="GCASH" onclick="showDiv ('2')" >GCASH</option>
-     <option value="3" id="CREDIT CARD" name="CREDIT CARD" onclick="showDiv ('3')" >CREDIT CARD</option>
+     <option value="BANK ACCOUNT<" id="BANK ACCOUNT" name="BANK ACCOUNT" onclick="showDiv ('1')" >BANK ACCOUNT</option>
+     <option value="GCASH" id="GCASH" name="GCASH" onclick="showDiv ('2')" >GCASH</option>
+     <option value="CREDIT CARD" id="CREDIT CARD" name="CREDIT CARD" onclick="showDiv ('3')" >CREDIT CARD</option>
      
      </select>
-	<!-- <p id="selectsss">
-	<input type="radio" onclick="showDiv ('1')" name="selectmethod" id="selectmethod" value="BANK ACCOUNT"> BANK ACCOUNT</input> &nbsp;
-    <input type="radio" onclick="showDiv ('2')" name="selectmethod" id="slctmthd" value="GCASH"> GCASH </input>&nbsp;
-    <input type="radio" onclick="showDiv ('3')" name="selectmethod" id="slectmthod" value="CREDIT CARD"> CREDIT CARD </input><br><br>&nbsp; -->
-   
+
     <div id="1" class="hidden"> Account Holder: <input type="text" id="Holder" name="Holder">&nbsp;
 	Bank Name: <input type="text" id="Bank" name="Bank"><br><br>&nbsp;
 	Account Number: <input type="text" id="Account" name="Account">&nbsp;
@@ -153,76 +149,3 @@ nav p{
 
 
 
-
-
-<!-- <!DOCTYPE html>
-<html>
-<body>
-  <tr>
-  <td>How many hours:</td>
-  <td><input type="text" value="" name="QTY" id="QTY" onKeyUp="multiply()"/></td>
-  <td><input type="hidden" name="PPRICE" id="PPRICE" value="150" /></td>
-  <td><input type="text" name="TOTAL" id="TOTAL" /></td>
-   <td>How many days:</td>
-  <td><input type="text" value="" name="QTY1" id="QTY1" onKeyUp="multiply()"/></td>
-	<td><input type="text" name="TOTAL2" id="TOTAL2" /></td>
-	
-</tr>
-	<script>
-	  function multiply()
-{
-    a = Number(document.getElementById('QTY').value);
-    b = Number(document.getElementById('PPRICE').value);
-    c = a * b;
-    document.getElementById('TOTAL').value = c;
-    d = Number(document.getElementById('QTY1').value); 
-    e = d * c;
-    document.getElementById('TOTAL2').value = e;
-}
-
-  </script>  
-		
-		
-	
-</html> -->
-
-
-<!-- 
-<html>
-  <head>
-    <script type="text/javascript">
-        function showDiv (divId)
-        {
-          var div = document.getElementById (divId);
-          var divs = document.getElementsByTagName('div');
-          for (var i in divs) 
-          {
-            divs [i].className = "hidden";
-          }
-          div.className = "shown";
-        }
-    </script>
-    <style>
-        .hidden
-        {
-            display:none;
-        }
-        .shown
-        {
-            display:block;
-        }
-    </style>
-  </head>
-  <body>
-        <input type="radio" onclick="showDiv ('1')" name="selectme">Home Visiting</input>
-        <input type="radio" onclick="showDiv ('2')" name="selectme">Online</input>
-        <input type="radio" onclick="showDiv ('3')" name="selectme">Tutor House</input>
-     
-
-        <div id="1" class="hidden">Note* This are expected that there's an aditional payment</div>
-        <div id="2" class="hidden"></div>
-        <div id="3" class="hidden"></div>
-      
-
-  </body>
-</html> -->

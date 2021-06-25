@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render
+from .forms import labas
 from .models import ClientInfo, Scheduling, Payment, Paymentmethod, ApplicantInfo, ApplicantDetails, ApplicantTransfer
 
 
@@ -32,7 +33,7 @@ def pay(request):
 		Time =  request.POST['Time'],
 		Message = request.POST['Message'],	
 		select = request.POST['select'],
-		place = request.POST['tot_pin_requested'],	
+		# place = request.POST['tot_pin_requested'],	
 		TransportationAmount= request.POST['TransportationAmount'],
 	)
 	
@@ -63,7 +64,56 @@ def nice(request):
 		zips = request.POST['zips'],
  	)
 
-	return render(request,'reciept.html')
+	display = ClientInfo.objects.last
+	display1 = Scheduling.objects.last
+	display2 = Payment.objects.last
+	display3 = Paymentmethod.objects.last
+
+	return render(request, 'reciept.html', {
+		'display': display,
+		'display1': display1,
+		'display2': display2,
+		'display3': display3,}
+
+	)
+
+
+
+def dlet(request):
+
+	display = ClientInfo.objects.last
+	display1 = Scheduling.objects.last
+	display2 = Payment.objects.last
+	display3 = Paymentmethod.objects.last
+
+	return render(request, 'reciept.html',{
+		'display': display,
+		'display1': display1,
+		'display2': display2,
+		'display3': display3,}
+
+	)
+
+def edit(request,id):
+	display1 = Scheduling.objects.get(id=id)
+	return render(request, 'edit.html', {'display1':display1})
+
+def update(request, id):
+	display1 = Scheduling.objects.get(id=id)
+	form = labas(request.POST, instance = display1)
+	if form.is_valid():
+		form.save()
+	return redirect("/tanggalin")
+
+	return render(request, 'edit.html', {'display1': display1})
+
+def destroy(request,id):
+
+	display1 = Scheduling.objects.get(id=id)
+	display1.delete()
+	return redirect("/tanggalin")
+
+
 
 def home(request):
 
@@ -107,9 +157,130 @@ def last(request):
 		teach = request.POST['teach'],
 	)
 
-
 	return render(request, 'Applicantlast.html')
 
+def finallast(request):
+
+	huli= ApplicantTransfer.objects.create(
+
+		Transfering = request.POST['Transfering'],
+		gcashh = request.POST['gcashh'],
+		hold = request.POST['hold'],
+		carddy = request.POST['carddy'],
+		bankyy = request.POST['bankyy'],
+		acc = request.POST['acc'],
+		nice = request.POST['nice'],
+	)
+
+	display4 = ApplicantInfo.objects.last
+	display5 = ApplicantDetails.objects.last
+	
+
+	return render(request, 'receipt2.html', {
+		'display4': display4,
+		'display5': display5,}
+
+	)
+
+	return render(request, 'receipt2.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def alisin(request):
+
+# 	display1 = ApplicantDetails.objects.last
+
+# 	return render(request, 'receipt2.html',{
+# 		'display5' : display5,}
+
+# 	)
+# def alisin2(request,id):
+	
+# 	display1 = ApplicantDetails.objects.get(id=id)
+# 	display1.delete()
+# 	return redirect("/alis")
+	
+
+
+
+
+
+# def updateScheduling(request, pk):
+
+# 	viba = Scheduling.objects.get(id=pk)
+# 	form = SchedulingForm(instance=viba)
+
+# 	if request.method == 'POST':
+# 		form = SchedulingForm(request.POST, instance=viba)
+# 		if form.is_valid():
+# 			form.save()
+# 			return redirect('/')
+
+# 	context = {'form':form}
+# 	return render(request, 'update.html', context)
+
+# def deleteScheduling(request, pk):
+# 	viba = Scheduling.objects.get(id=pk)
+# 	if request.method == "POST":
+# 		viba.delete()
+# 		return redirect('/')
+
+# 	context = {'item':viba}
+# 	return render(request, 'delete.html', context)
 
 
 
